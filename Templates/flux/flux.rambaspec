@@ -1,0 +1,19 @@
+# Template information section
+name: "flux"
+summary: "Flux module template"
+author: "Mikhail Zhdanov"
+
+# The declarations for code files
+
+code_files:
+# View
+- {name: View.swift,  path: Code/view.swift.liquid}
+
+# Reducer
+- {name: Reducer.swift,  path: Code/reducer.swift.liquid}
+
+# State
+- {name: State.swift,  path: Code/state.swift.liquid}
+
+# Action
+- {name: Action.swift,  path: Code/action.swift.liquid}

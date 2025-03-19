@@ -1,0 +1,20 @@
+### Headers settings
+company: EPS
+
+### Xcode project settings
+project_name: FluxExample
+xcodeproj_path: FluxExample.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: FluxExample
+
+# The file path for new modules
+project_file_path: FluxExample/Flux
+
+# The Xcode group path to new modules
+project_group_path: FluxExample/Flux
+
+### Templates
+templates:
+- {name: flux}
