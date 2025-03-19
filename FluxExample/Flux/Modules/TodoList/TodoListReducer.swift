@@ -20,7 +20,8 @@ struct TodoListReducer {
             switch action {
             case .binding:
                 return .none
-            case .addTodo(let todo):
+            case .addTodo(let todoTitle):
+                let todo = Todo(title: todoTitle)
                 state.todos.append(todo)
                 return .none
             case .toggleCompletion(let id):

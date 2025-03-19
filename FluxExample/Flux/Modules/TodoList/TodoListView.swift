@@ -30,14 +30,12 @@ struct TodoListView: View {
             .navigationTitle("Todo List")
             .toolbar {
                 NavigationLink("➕") {
-                    AddTodoView(
-                        store: Store(initialState: AddTodoState(), reducer: { AddTodoReducer() }),
-                        onSave: { todo in
-                            viewStore.send(.addTodo(todo))
-                        }
-                    )
+                    AddTodoView(store: Store(initialState: AddTodoState(), reducer: { AddTodoReducer() }))
                 }
             }
+        }
+        .onAppear {
+            Dispatcher.shared.register(store, reducerType: TodoListReducer.self)
         }
     }
     

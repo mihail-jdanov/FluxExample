@@ -14,7 +14,7 @@ enum TodoListAction: BindableAction {
     typealias State = TodoListState
 
     case binding(BindingAction<State>)
-    case addTodo(Todo)
+    case addTodo(String)
     case toggleCompletion(UUID)
     
 }

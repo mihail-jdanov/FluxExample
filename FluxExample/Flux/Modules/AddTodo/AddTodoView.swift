@@ -12,9 +12,7 @@ import ComposableArchitecture
 struct AddTodoView: View {
 
     let store: StoreOf<AddTodoReducer>
-    
-    var onSave: ((Todo) -> Void)?
-    
+        
     @Environment(\.dismiss) var dismiss
     
     @FocusState var isFieldFocused: Bool
@@ -25,8 +23,8 @@ struct AddTodoView: View {
                 TextField("What to do?", text: viewStore.$title)
                     .focused($isFieldFocused)
                 Button("Save") {
-                    onSave?(Todo(title: viewStore.title))
                     dismiss()
+                    Dispatcher.shared.dispatch(TodoListAction.addTodo(viewStore.title))
                 }
                 .disabled(viewStore.title.isEmpty)
             }
@@ -34,10 +32,13 @@ struct AddTodoView: View {
                 isFieldFocused = true
             }
         }
+        .onAppear {
+            Dispatcher.shared.register(store, reducerType: AddTodoReducer.self)
+        }
     }
 
 }
 
 #Preview {
-    AddTodoView(store: .init(initialState: AddTodoState(), reducer: { AddTodoReducer() }), onSave: nil)
+    AddTodoView(store: .init(initialState: AddTodoState(), reducer: { AddTodoReducer() }))
 }

@@ -19,6 +19,9 @@ struct {{ module_info.name }}View: View {
                 store.send(.someAction)
             }
         }
+        .onAppear {
+            Dispatcher.shared.register(store, reducerType: {{ module_info.name }}Reducer.self)
+        }
     }
 
 }

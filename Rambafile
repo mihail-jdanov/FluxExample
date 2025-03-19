@@ -10,10 +10,10 @@ xcodeproj_path: FluxExample.xcodeproj
 project_target: FluxExample
 
 # The file path for new modules
-project_file_path: FluxExample/Flux
+project_file_path: FluxExample/Flux/Modules
 
 # The Xcode group path to new modules
-project_group_path: FluxExample/Flux
+project_group_path: FluxExample/Flux/Modules
 
 ### Templates
 templates:
