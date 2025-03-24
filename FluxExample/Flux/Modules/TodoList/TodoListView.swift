@@ -11,7 +11,7 @@ import ComposableArchitecture
 
 struct TodoListView: View {
 
-    @Bindable var store: StoreOf<TodoListReducer>
+    let store: StoreOf<TodoListReducer>
     
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in

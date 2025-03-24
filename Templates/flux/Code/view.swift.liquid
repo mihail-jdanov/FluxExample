@@ -11,7 +11,7 @@ import ComposableArchitecture
 
 struct {{ module_info.name }}View: View {
 
-    @Bindable var store: StoreOf<{{ module_info.name }}Reducer>
+    let store: StoreOf<{{ module_info.name }}Reducer>
 
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
